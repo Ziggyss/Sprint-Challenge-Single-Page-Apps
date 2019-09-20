@@ -21,7 +21,7 @@ export default function App() {
 
   const onSearch = event => {
     setSearchTerm(event.target.value);
-  };
+  }; 
 
   useEffect(() => {
     Axios.get(rickMortyApi)
@@ -46,6 +46,7 @@ export default function App() {
             path="/characters"
             render={() => (
               <CharacterList
+              onSearch={onSearch}
                 characterList={characterData.filter(char => {
                   return char.name
                     .toLowerCase()

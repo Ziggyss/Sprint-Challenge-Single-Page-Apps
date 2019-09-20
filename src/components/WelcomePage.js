@@ -9,7 +9,7 @@ const StyledWelcome = styled.div`
   box-shadow: 0px 0px 22px 9px rgba(87, 81, 87, 0.65);
   padding: 50px;
   margin: 50px;
-`;
+`; 
 
 export default function WelcomePage() {
   return (

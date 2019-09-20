@@ -14,6 +14,7 @@ const Title = styled.h2`
   font-size: 30px;
 `;
 
+
 export default function CharacterList(props) {
   const { characterList, onSearch, searchTerm } = props;
   return (

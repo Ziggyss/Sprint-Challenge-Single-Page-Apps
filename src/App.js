@@ -6,12 +6,13 @@ import WelcomePage from "./components/WelcomePage";
 import CharacterList from "./components/CharacterList";
 import Nav from "./components/Nav";
 import SearchForm from "./components/SearchForm";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const StyledContainer = styled.div`
-display: flex;
-justify-content: space-evenly;
-`
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+`;
 
 const rickMortyApi = "https://rickandmortyapi.com/api/character/";
 
@@ -39,22 +40,21 @@ export default function App() {
       <main>
         <Nav />
         <Header />
-        <SearchForm onSearch={onSearch} searchTerm={searchTerm} />
         <StyledContainer>
-        <Route exact path="/" component={WelcomePage} />
-        <Route
-          exact
-          path="/characters"
-          render={() => (
-            <CharacterList
-              characterList={characterData.filter(char => {
-                return char.name
-                  .toLowerCase()
-                  .includes(searchTerm.toLowerCase());
-              })}
-            />
-          )}
-        />
+          <Route exact path="/" component={WelcomePage} />
+          <Route
+            exact
+            path="/characters"
+            render={() => (
+              <CharacterList
+                characterList={characterData.filter(char => {
+                  return char.name
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase());
+                })}
+              />
+            )}
+          />
         </StyledContainer>
       </main>
     );

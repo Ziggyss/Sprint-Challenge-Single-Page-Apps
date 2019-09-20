@@ -1,2 +1,2 @@
-const rickMortyApi = 'https://rick-api.herokuapp.com/api/';
+const rickMortyApi = 'https://rickandmortyapi.com/api/character/';
 

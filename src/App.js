@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import Axios from "axios";
 import Header from "./components/Header";
 import WelcomePage from "./components/WelcomePage";
-import CharacterList from "./components/CharacterList"; 
+import CharacterList from "./components/CharacterList";
 import Nav from "./components/Nav";
 
 const rickMortyApi = "https://rickandmortyapi.com/api/character/";
@@ -22,20 +22,24 @@ export default function App() {
       });
   }, []);
 
-
-if (characterData) {
+  if (characterData) {
+    return (
+      <main>
+        <Header />
+        <Nav />
+        <Route exact path="/" component={WelcomePage} />
+        <Route
+          exact
+          path="/characters"
+          render={() => <CharacterList characterList={characterData} />}
+        />
+        <Route exact path="/search" /* component={SearchForm} */ />
+      </main>
+    );
+  }
   return (
-    <main>
-      <Header />
-      <Nav />
-      <Route exact path="/" component={WelcomePage} />
-      <Route exact path="/characters" 
-      render={() => <CharacterList characterList={characterData} />}
-      />
-      <Route exact path="/search" /* component={SearchForm} */ />
-    </main>
+    <div>
+      <h4>Please wait.... we're working on getting your info.</h4>
+    </div>
   );
 }
-return <div><h4>Please wait.... we're working on getting your info.</h4></div>;
-
-};

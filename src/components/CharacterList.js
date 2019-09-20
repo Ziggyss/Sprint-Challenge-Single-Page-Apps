@@ -9,7 +9,6 @@ export default function CharacterList() {
   useEffect(() => {
     Axios.get(rickMortyApi)
       .then(response => {
-        debugger
         console.log(response);
         setCharacters(response.data.results);
       })

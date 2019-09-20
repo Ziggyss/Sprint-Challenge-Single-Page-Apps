@@ -5,13 +5,12 @@ import Header from "./components/Header";
 import WelcomePage from "./components/WelcomePage";
 import CharacterList from "./components/CharacterList";
 import Nav from "./components/Nav";
-import SearchForm from "./components/SearchForm";
 import styled from "styled-components";
 
 const StyledContainer = styled.div`
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 `;
 
 const rickMortyApi = "https://rickandmortyapi.com/api/character/";
@@ -42,6 +41,7 @@ export default function App() {
         <Header />
         <StyledContainer>
           <Route exact path="/" component={WelcomePage} />
+        {/*   <StyledCards> */}
           <Route
             exact
             path="/characters"
@@ -55,6 +55,7 @@ export default function App() {
               />
             )}
           />
+         {/*  </StyledCards> */}
         </StyledContainer>
       </main>
     );

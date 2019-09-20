@@ -1,6 +1,5 @@
 import React from "react";
 import CharacterCard from "./CharacterCard";
-/* import SearchForm from "./SearchForm"; */
 
 export default function CharacterList(props) {
   const { characterList } = props;
@@ -14,6 +13,8 @@ export default function CharacterList(props) {
           image={character.image}
           species={character.species}
           status={character.status}
+          gender={character.gender}
+          origin={character.origin.name}
         />
       ))}
     </div>

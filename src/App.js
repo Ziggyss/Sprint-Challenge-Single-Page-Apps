@@ -6,6 +6,12 @@ import WelcomePage from "./components/WelcomePage";
 import CharacterList from "./components/CharacterList";
 import Nav from "./components/Nav";
 import SearchForm from "./components/SearchForm";
+import styled from 'styled-components';
+
+const StyledContainer = styled.div`
+display: flex;
+justify-content: space-evenly;
+`
 
 const rickMortyApi = "https://rickandmortyapi.com/api/character/";
 
@@ -31,9 +37,10 @@ export default function App() {
   if (characterData) {
     return (
       <main>
-        <Header />
         <Nav />
+        <Header />
         <SearchForm onSearch={onSearch} searchTerm={searchTerm} />
+        <StyledContainer>
         <Route exact path="/" component={WelcomePage} />
         <Route
           exact
@@ -48,6 +55,7 @@ export default function App() {
             />
           )}
         />
+        </StyledContainer>
       </main>
     );
   }

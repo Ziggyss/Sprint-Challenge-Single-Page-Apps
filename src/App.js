@@ -5,11 +5,17 @@ import Header from "./components/Header";
 import WelcomePage from "./components/WelcomePage";
 import CharacterList from "./components/CharacterList";
 import Nav from "./components/Nav";
+import SearchForm from "./components/SearchForm";
 
 const rickMortyApi = "https://rickandmortyapi.com/api/character/";
 
 export default function App() {
   const [characterData, setCharacterData] = useState();
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const onSearch = event => {
+    setSearchTerm(event.target.value);
+  };
 
   useEffect(() => {
     Axios.get(rickMortyApi)
@@ -27,13 +33,21 @@ export default function App() {
       <main>
         <Header />
         <Nav />
+        <SearchForm onSearch={onSearch} searchTerm={searchTerm} />
         <Route exact path="/" component={WelcomePage} />
         <Route
           exact
           path="/characters"
-          render={() => <CharacterList characterList={characterData} />}
+          render={() => (
+            <CharacterList
+              characterList={characterData.filter(char => {
+                return char.name
+                  .toLowerCase()
+                  .includes(searchTerm.toLowerCase());
+              })}
+            />
+          )}
         />
-        <Route exact path="/search" /* component={SearchForm} */ />
       </main>
     );
   }

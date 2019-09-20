@@ -1,13 +1,11 @@
 import React from "react";
 import CharacterCard from "./CharacterCard";
-import SearchForm from './SearchForm';
+/* import SearchForm from "./SearchForm"; */
 
 export default function CharacterList(props) {
   const { characterList } = props;
-
   return (
     <div>
-      <SearchForm />
       <h2>Characters</h2>
       {characterList.map(character => (
         <CharacterCard

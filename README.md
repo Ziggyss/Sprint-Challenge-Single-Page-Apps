@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: Server side routing requires data to come from the server during the navigation of the site. All of the action takes place on a web server. Client side routing means that the action takes place on the user’s computer and, after the initial load, there is no need for more communication with the server to provide more information for the different pages or assets on the site.
 
 ## Project Set Up
 

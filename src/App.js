@@ -5,7 +5,7 @@ import CharacterList from "./components/CharacterList";
 import Nav from "./components/Nav";
 import SearchForm from "./components/SearchForm";
 import { Route } from 'react-router-dom';
-
+import styled from 'styled-components';
 
 
 export default function App() {

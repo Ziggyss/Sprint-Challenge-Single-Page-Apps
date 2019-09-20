@@ -41,7 +41,6 @@ export default function App() {
         <Header />
         <StyledContainer>
           <Route exact path="/" component={WelcomePage} />
-        {/*   <StyledCards> */}
           <Route
             exact
             path="/characters"
@@ -55,7 +54,6 @@ export default function App() {
               />
             )}
           />
-         {/*  </StyledCards> */}
         </StyledContainer>
       </main>
     );

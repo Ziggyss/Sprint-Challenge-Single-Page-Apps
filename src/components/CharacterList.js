@@ -10,9 +10,9 @@ const StyledCards = styled.div`
 `;
 
 const Title = styled.h2`
-text-align: center;
-font-size: 30px;
-`
+  text-align: center;
+  font-size: 30px;
+`;
 
 export default function CharacterList(props) {
   const { characterList, onSearch, searchTerm } = props;

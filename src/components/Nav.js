@@ -13,12 +13,12 @@ const StyledNav = styled.div`
 `;
 
 const StyledNavLink = styled(NavLink)`
-text-decoration: none;
-padding: 24px;
-height: 16px;
-color: white;
-background: black;
-`
+  text-decoration: none;
+  padding: 24px;
+  height: 16px;
+  color: white;
+  background: black;
+`;
 
 export default function Nav() {
   return (

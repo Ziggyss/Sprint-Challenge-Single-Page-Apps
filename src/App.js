@@ -15,9 +15,11 @@ const StyledContainer = styled.div`
 
 const rickMortyApi = "https://rickandmortyapi.com/api/character/";
 
+
 export default function App() {
   const [characterData, setCharacterData] = useState();
   const [searchTerm, setSearchTerm] = useState("");
+
 
   const onSearch = event => {
     setSearchTerm(event.target.value);
@@ -34,6 +36,7 @@ export default function App() {
       });
   }, []);
 
+
   if (characterData) {
     return (
       <main>
@@ -48,9 +51,17 @@ export default function App() {
               <CharacterList
               onSearch={onSearch}
                 characterList={characterData.filter(char => {
-                  return char.name
+                  return char.name 
                     .toLowerCase()
-                    .includes(searchTerm.toLowerCase());
+                    .includes(searchTerm.toLowerCase())
+                    ||char.species
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase())
+                    ||char.status
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase())
+                    ;
+                
                 })}
               />
             )}
